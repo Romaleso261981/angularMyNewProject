@@ -1,13 +1,8 @@
-<div class="container">
-  <h1 class="font-extrabold container text-center text-9xl accent-red-900">main title in this page</h1>
+<div class="container grid-cols-1 m-auto">
+  <h1 class="font-serif container text-center text-9xl accent-red-900">My first page in angular</h1>
 
-  <app-product ></app-product>
-  <app-product ></app-product>
-  <app-product ></app-product>
-  <app-product ></app-product>
-  <app-product ></app-product>
-  <app-product ></app-product>
-  <app-product ></app-product>
-  <app-product ></app-product>
+  <app-product [product]="products[0]" ></app-product>
+  <app-product [product]="products[1]" ></app-product>
+  <app-product [product]="products[2]" ></app-product>
 
 </div>
