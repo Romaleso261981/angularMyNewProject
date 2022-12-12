@@ -1,12 +1,12 @@
-import {Component, Input}  from "@angular/core";
-import {IProduct} from '../../models/product'
+import {Component, Input} from "@angular/core";
+import {IHit} from '../../models/product'
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html'
 })
 export class ProductComponent {
-  @Input() product: IProduct
+  @Input() product: IHit
   details = false
 }
 

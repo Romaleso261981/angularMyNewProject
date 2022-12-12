@@ -1,8 +1,9 @@
 <div class="container grid-cols-1 m-auto">
   <h1 class="font-serif container text-center text-9xl accent-red-900">My first page in angular</h1>
 
-  <app-product [product]="products[0]" ></app-product>
-  <app-product [product]="products[1]" ></app-product>
-  <app-product [product]="products[2]" ></app-product>
+  <app-product
+    *ngFor="let product of products; let i = index"
+    [product]="product"
+  ></app-product>
 
 </div>

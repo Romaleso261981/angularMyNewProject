@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core'
-import {HttpClient, HttpErrorResponse, HttpParams} from '@angular/common/http'
-import {catchError, delay, Observable, retry, tap, throwError} from 'rxjs'
-import {IProduct} from '../models/product'
+import {HttpClient} from '@angular/common/http'
 import {ErrorService} from './error.service'
+import {IHit, IProduct} from "../models/product";
+import {map} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -14,31 +14,14 @@ export class ProductsService {
   ) {
   }
 
-  products: IProduct[] = []
 
-  getAll(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>('https://fakestoreapi.com/products', {
-      params: new HttpParams({
-        fromObject: {limit: 5}
-      })
-    }).pipe(
-      delay(200),
-      retry(2),
-      tap(products => this.products = products),
-      catchError(this.errorHandler.bind(this))
-    )
-  }
+  products: IHit[] = []
 
-  create(product: IProduct): Observable<IProduct> {
-    return this.http.post<IProduct>('https://fakestoreapi.com/products', product)
+  getAll() {
+    return this.http.get<IProduct>('https://pixabay.com/api/?key=29683186-89d5b8f18ccbe7d45b5194d45&image_type=photo&orientation=horizontal&per_page=12')
       .pipe(
-        tap(prod => this.products.push(prod))
+        map((product)=> product.hits)
       )
-  }
 
-
-  private errorHandler(error: HttpErrorResponse) {
-    this.errorService.handle(error.message)
-    return throwError(() => error.message)
   }
 }
