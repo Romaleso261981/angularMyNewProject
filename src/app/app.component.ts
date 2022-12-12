@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core'
-import {IHit, IProduct} from './models/product'
+import {IProduct} from './models/product'
 import {ProductsService} from "./services/products.service";
 
 @Component({
@@ -8,7 +8,7 @@ import {ProductsService} from "./services/products.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  products: IHit
+  products: IProduct
   loading = false
 
   constructor(private productsService: ProductsService) {
@@ -17,8 +17,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.loading = true
-    this.productsService.getAll().subscribe((products) => {
-      console.log(products)
+    this.productsService.getAll().subscribe({
+      next: arr => console.log(arr)
     })
     this.loading = false
   }
