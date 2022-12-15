@@ -4,17 +4,14 @@ import {BrowserModule} from '@angular/platform-browser'
 
 import {AppComponent} from './app.component'
 import {HttpClientModule} from '@angular/common/http'
-import {FormsModule, ReactiveFormsModule} from '@angular/forms'
-
-import {FocusDirective} from './directives/focus.directive'
+import {FormsModule} from '@angular/forms'
 import {ProductComponent} from "./components/product/product.component";
-import { FormComponent } from './form/form.component';
+import {FormComponent} from './form/form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FocusDirective,
     ProductComponent,
     FormComponent
   ],

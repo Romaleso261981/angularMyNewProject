@@ -1,7 +1,7 @@
 export interface IProduct {
   total: number;
   totalHits: number;
-  hits: IHit[];
+    hits: IHit[];
 }
 
 export interface IHit {
