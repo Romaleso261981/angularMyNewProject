@@ -1,0 +1,22 @@
+
+<hr>
+<div class="w-200 h-20 bg-cyan-300 text-center">
+  <h1 class="font-serif">{{title}}</h1>
+  <input type="text" [value]="title" >
+</div>
+<button
+  class="border py-2 px-4 rounded bg-amber-300 block m-auto"
+  [ngClass]="{
+    'bg-amber-300': !toggle,
+    'bg-green-600': toggle
+    }"
+  (click)="toggle = !toggle"
+>
+  toggle cards
+</button>
+<button type="button" ></button>
+<hr>
+
+<div *ngIf="toggle" class="  bg-cyan-600">
+  <span class="jasmine-errored">this will be img</span>
+</div>

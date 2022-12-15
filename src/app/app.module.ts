@@ -8,19 +8,20 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 import {FocusDirective} from './directives/focus.directive'
 import {ProductComponent} from "./components/product/product.component";
+import { FormComponent } from './form/form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FocusDirective,
-    ProductComponent
+    ProductComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

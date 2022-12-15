@@ -1,9 +1,11 @@
-<div class="py-4 px-6 border rounded grid-cols-3 text-center items-center items-center pb-2 ">
-  <h2 class="mb-3 text-center text-lg">{{product}}</h2>
-  <img [src]="product" [alt]="product" class="m-autow-1/6 mb-2 h-auto text-center">
+<div class="">
+  <ng-container *ngFor="let hit of product?.hits">
+    <h2 class="mb-3 text-center text-lg">{{hit.tags}}</h2>
+    <img [src]="hit.userImageURL" [alt]="hit.tags" class="">
+  </ng-container>
 
   <button
-    class="border py-2 px-4 rounded bg-amber-300"
+    class="border py-2 px-4 rounded bg-amber-300 hover: shadow-indigo-600"
     [ngClass]="{
     'bg-amber-300': !details,
     'bg-green-600': details
@@ -14,9 +16,9 @@
   </button>
 
   <div *ngIf="details">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, natus.</p>
-    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos explicabo facilis minus praesentium quam. A, aliquid amet aperiam atque autem dolorum eligendi error exercitationem facilis magnam maiores odio perspiciatis quam ratione, tempore, ullam unde velit voluptas! Aliquam cum eaque, eligendi eum explicabo harum inventore iste magni mollitia nobis nostrum odit pariatur possimus recusandae soluta temporibus vel voluptate. Asperiores autem culpa cumque eius eveniet libero numquam officiis, pariatur quaerat quia sequi sit ut? Animi asperiores facilis itaque qui totam vitae! Amet eum illum officiis totam velit, voluptatum. Adipisci asperiores, consequatur, corporis distinctio ducimus ex facere ipsum labore laborum maiores nulla praesentium quam quidem, quod reprehenderit temporibus voluptatem. A ab accusamus adipisci culpa cumque debitis dolore ducimus error est exercitationem facere fuga fugit illo iure labore laborum maxime nam numquam omnis perferendis perspiciatis porro qui reiciendis repellat, sunt tempora totam ullam unde veritatis voluptatem. Architecto consequuntur corporis, eveniet facilis ipsa, maxime minima nulla officiis pariatur, quibusdam recusandae voluptate. Asperiores, at, fuga! Accusamus aliquam beatae blanditiis consequatur consequuntur culpa cupiditate debitis dignissimos dolores ducimus enim, est eveniet exercitationem fugit id ipsum laboriosam laudantium libero neque nihil numquam obcaecati praesentium provident reiciendis rerum sapiente sequi similique sint sunt tempora temporibus ullam vero vitae voluptatibus.</span>
-    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aspernatur commodi corporis, delectus doloribus eos fuga, iste maxime, necessitatibus nobis officia quo quod quos recusandae saepe sit sunt voluptatem. Architecto, atque culpa dolorem dolorum impedit nemo obcaecati porro sunt veniam. Dolore eius est incidunt non officia, possimus vitae voluptatum?</span>
+    <p class="text-3xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, natus.</p>
+    <span class="text-2xl text-fuchsia-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos explicabo facilis minus praesentium quam. A, aliquid amet aperiam atque autem dolorum eligendi error exercitationem facilis magnam maiores odio perspiciatis quam ratione, tempore, ullam unde velit voluptas! Aliquam cum eaque, eligendi eum explicabo harum inventore iste magni mollitia nobis nostrum odit pariatur possimus recusandae soluta temporibus vel voluptate. Asperiores autem culpa cumque eius eveniet libero numquam officiis, pariatur quaerat quia sequi sit ut? Animi asperiores facilis itaque qui totam vitae! Amet eum illum officiis totam velit, voluptatum. Adipisci asperiores, consequatur, corporis distinctio ducimus ex facere ipsum labore laborum maiores nulla praesentium quam quidem, quod reprehenderit temporibus voluptatem. A ab accusamus adipisci culpa cumque debitis dolore ducimus error est exercitationem facere fuga fugit illo iure labore laborum maxime nam numquam omnis perferendis perspiciatis porro qui reiciendis repellat, sunt tempora totam ullam unde veritatis voluptatem. Architecto consequuntur corporis, eveniet facilis ipsa, maxime minima nulla officiis pariatur, quibusdam recusandae voluptate. Asperiores, at, fuga! Accusamus aliquam beatae blanditiis consequatur consequuntur culpa cupiditate debitis dignissimos dolores ducimus enim, est eveniet exercitationem fugit id ipsum laboriosam laudantium libero neque nihil numquam obcaecati praesentium provident reiciendis rerum sapiente sequi similique sint sunt tempora temporibus ullam vero vitae voluptatibus.</span>
+    <span class="text-gray-900">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aspernatur commodi corporis, delectus doloribus eos fuga, iste maxime, necessitatibus nobis officia quo quod quos recusandae saepe sit sunt voluptatem. Architecto, atque culpa dolorem dolorum impedit nemo obcaecati porro sunt veniam. Dolore eius est incidunt non officia, possimus vitae voluptatum?</span>
   </div>
 
 </div>

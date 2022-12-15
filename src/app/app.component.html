@@ -1,9 +1,9 @@
 <div class="container grid-cols-1 m-auto">
   <h1 class="font-serif container text-center text-9xl accent-red-900">My first page in angular</h1>
-
+  <app-form></app-form>
+  <h2 class="font-bold text-fuchsia-500 container text-center text-3xl">{{title}}</h2>
   <app-product
-    *ngFor="let product of products; let i = index"
-    [product]="product"
+  *ngFor="let product of products"
+  [product]="product"
   ></app-product>
-
 </div>
